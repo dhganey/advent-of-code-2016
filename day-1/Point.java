@@ -25,5 +25,30 @@ public class Point {
 		this.y = y;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		}
+		
+		if (!(o instanceof Point)) {
+			return false;
+		}
+		
+		Point compPoint = (Point) o;
+		return compPoint.getX() == this.getX() && compPoint.getY() == this.getY();
+	}
 	
+	@Override
+	public String toString() {
+		return "(" + this.getX() + ", " + this.getY() + ")";
+	}
+	
+	@Override
+	public int hashCode() {
+		int hash = 7;
+	    hash = 71 * hash + this.x;
+	    hash = 71 * hash + this.y;
+	    return hash;
+	}
 }
