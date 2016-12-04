@@ -4,7 +4,7 @@ public class Instruction {
 		
 		public Instruction(String input) {
 			this.turn = TurnDirection.valueOf(Character.toString(input.charAt(0)));
-			this.blocks = Integer.parseInt(Character.toString(input.charAt(1)));
+			this.blocks = Integer.parseInt(input.substring(1));
 		}
 
 		public TurnDirection getTurn() {
